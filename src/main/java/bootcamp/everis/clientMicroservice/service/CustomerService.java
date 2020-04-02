@@ -8,8 +8,7 @@ import reactor.core.publisher.Mono;
 @Service
 public interface CustomerService {
     public Flux<Customer> getCustomer();
-    public Mono<Customer> findByIdCustomer(Long id);
-
+//  public Mono<Customer> findByIdCustomer(Long id);
     public Mono<Customer> saveCustomer(Customer cusS);
     public Mono<Customer> updateCustomer(Long id, Customer cusS);
     public Mono<Customer> deleteCustomer(Long id);
