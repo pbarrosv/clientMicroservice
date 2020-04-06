@@ -19,20 +19,20 @@ public class CustomerRestController {
     @Autowired
     private CustomerService customerService;
 
-    @GetMapping(value = "/all")
+    @GetMapping(value = "/allCustomer")
     @ApiOperation(value = "Find all customers ",notes = "It shows me the information of all the clients")
     public Flux<Customer> getAll() {
         return customerService.getCustomer();
     }
 
-    @PostMapping("/save")
+    @PostMapping("/saveCustomer")
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation(value = "Registered customer",notes = "Register customer information")
     public Mono<Customer> save(@Valid @RequestBody Customer saveCus) {
         return this.customerService.saveCustomer(saveCus);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/deleteCustomer/{id}")
     @ApiOperation(value = "Delete customer by id",notes = "Customers are searched by id and removed")
     public Mono<ResponseEntity<Customer>> delete(@PathVariable("id") Long id) {
         return this.customerService.deleteCustomer(id)
@@ -40,7 +40,7 @@ public class CustomerRestController {
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/updateCustomer/{id}")
     @ApiOperation(value = "Update customer by id",notes = "Customers are searched by id and modified")
     public Mono<ResponseEntity<Customer>> update(@PathVariable("id") Long id, @RequestBody Customer deleCus) {
         return this.customerService.updateCustomer(id, deleCus)

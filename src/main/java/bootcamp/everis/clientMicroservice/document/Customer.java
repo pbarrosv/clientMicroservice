@@ -17,15 +17,15 @@ public class Customer {
 
     @Id
     private Long id;
-    @NotNull(message = "El campo dni no debe estar vacio")
+    @NotNull(message = "The DNI field must not be empty")
     private int dni;
-    @NotEmpty(message = "El campo name no debe estar vacio")
+    @NotEmpty(message = "The NAME field must not be empty")
     private String name;
-    @NotEmpty(message = "El campo lastname no debe estar vacio")
+    @NotEmpty(message = "The LASTNAME field must not be empty")
     private String lastname;
-    @NotEmpty(message = "El campo address no debe estar vacio")
+    @NotEmpty(message = "The DNI ADDRESS must not be empty")
     private String address;
-    @NotEmpty(message = "El campo phone no debe estar vacio")
+    @NotEmpty(message = "The PHONE field must not be empty")
     private String phone;
 
 }
